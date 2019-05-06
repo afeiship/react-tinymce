@@ -45,8 +45,7 @@ export default class extends Component {
         'advlist lists link charmap anchor textcolor',
         'table contextmenu paste help'
       ],
-      toolbar:
-        'insert | undo redo |  formatselect | bold italic textcolor backcolor | removeformat'
+      toolbar: 'bold italic forecolor backcolor link'
     });
   }
 
