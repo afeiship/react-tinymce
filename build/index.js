@@ -55,6 +55,6 @@ export default {
     new CleanWebpackPlugin(),
     new MiniCssExtractPlugin({
       filename: './assets/styles/[name].[contenthash].css'
-    })
+    }),
   ]
 };

@@ -9,14 +9,17 @@ export default merge(baseConfig, {
     library: 'ReactTinymce',
     libraryTarget: 'umd'
   },
-  externals: {
-    react: 'React',
-    classnames: 'classnames',
-    noop: 'noop',
-    'react-dom': 'react-dom',
-    'object-assign': 'object-assign',
-    'prop-types': 'prop-types'
-  },
+  externals: [
+    /tinymce/i,
+    {
+      react: 'React',
+      classnames: 'classnames',
+      noop: 'noop',
+      'react-dom': 'react-dom',
+      'object-assign': 'object-assign',
+      'prop-types': 'prop-types'
+    }
+  ],
   plugins: [
     new CopyWebpackPlugin([
       {

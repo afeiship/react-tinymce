@@ -6,6 +6,15 @@
 npm install -S afeiship/react-tinymce
 ```
 
+## special for tinymce - webpack
+```js
+new CopyWebpackPlugin([
+  { from: './node_modules/tinymce/plugins', to: './assets/plugins' },
+  { from: './node_modules/tinymce/themes', to: './assets/themes' },
+  { from: './node_modules/tinymce/skins', to: './assets/skins' }
+])
+```
+
 ## usage
 1. import css
   ```scss
@@ -35,9 +44,3 @@ npm install -S afeiship/react-tinymce
 
 ## documentation
 - https://afeiship.github.io/react-tinymce/
-
-## resouces
-- https://www.robinwieruch.de/minimal-react-webpack-babel-setup/
-- https://www.valentinog.com/blog/react-webpack-babel/
-- https://jestjs.io/docs/en/tutorial-react#snapshot-testing-with-mocks-enzyme-and-react-16
-- https://testing-library.com/docs/react-testing-library/api
