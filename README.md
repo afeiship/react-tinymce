@@ -25,21 +25,30 @@ new CopyWebpackPlugin([
   ```
 2. import js
   ```js
-  import React from 'react';
+  import ReactTinymce from '../src/main';
   import ReactDOM from 'react-dom';
-  import ReactTinymce from 'react-tinymce';
-  
-  // your app:
-  class App extends React.Component{
-    render(){
+  import React from 'react';
+  import './assets/style.scss';
+
+  class App extends React.Component {
+    state = {
+      value: '<p><strong>STONG</strong> CONENT!</p>'
+    };
+
+    _onChange = (e) => {
+      console.log('e=>', e.target.value);
+    };
+
+    render() {
       return (
-        <ReactTinymce />
-      )
+        <div className="app-container">
+          <ReactTinymce value={this.state.value} onChange={this._onChange} />
+        </div>
+      );
     }
   }
 
-  // render to dom:
-  ReactDOM.render(<App/>, document.getElementById('app'));
+  ReactDOM.render(<App />, document.getElementById('app'));
   ```
 
 ## documentation
