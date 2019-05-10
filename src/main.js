@@ -1,2 +1,2 @@
-import BoilerplateReactComponent from './components';
-export default BoilerplateReactComponent;
+import ReactTinymce from './components';
+export default ReactTinymce;

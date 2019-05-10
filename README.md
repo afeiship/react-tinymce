@@ -1,12 +1,12 @@
 # react-tinymce
 > React component for tinymce.
 
-## install:
+## install
 ```shell
 npm install -S afeiship/react-tinymce
 ```
 
-## usage:
+## usage
 1. import css
   ```scss
   @import "~react-tinymce/style.scss";
@@ -33,10 +33,10 @@ npm install -S afeiship/react-tinymce
   ReactDOM.render(<App/>, document.getElementById('app'));
   ```
 
-## docs:
+## documentation
 - https://afeiship.github.io/react-tinymce/
 
-## resouces:
+## resouces
 - https://www.robinwieruch.de/minimal-react-webpack-babel-setup/
 - https://www.valentinog.com/blog/react-webpack-babel/
 - https://jestjs.io/docs/en/tutorial-react#snapshot-testing-with-mocks-enzyme-and-react-16

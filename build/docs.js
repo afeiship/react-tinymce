@@ -6,7 +6,7 @@ import merge from 'webpack-merge';
 export default merge(baseConfig, {
   entry: './public/index.js',
   output: {
-    path: resolve(__dirname, `../docs`),
+    path: resolve(__dirname, '../docs'),
     filename: './assets/bundle.[hash].js'
   },
   plugins: [

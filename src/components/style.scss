@@ -1,11 +1,13 @@
 $react-tinymce-options: () !default;
 
+@import "~tinymce/skins/ui/oxide/skin.min.css";
+
 .react-tinymce {
-  color: #000;
-  border: 4px dashed #ccc;
-  padding: 20px;
-  &:hover {
-    border-color: #ddd;
-    background: #f3f3f3;
+}
+
+// remove tiny ad:
+.tox-tinymce {
+  .tox-statusbar {
+    display: none;
   }
 }

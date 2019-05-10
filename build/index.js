@@ -1,6 +1,5 @@
 import { resolve } from 'path';
 import CleanWebpackPlugin from 'clean-webpack-plugin';
-import CopyWebpackPlugin from 'copy-webpack-plugin';
 import MiniCssExtractPlugin from 'mini-css-extract-plugin';
 
 export default {
@@ -12,7 +11,8 @@ export default {
   resolve: {
     extensions: ['.scss', '.js', '.jsx'],
     alias: {
-      '@': resolve(__dirname, '../src')
+      '@': resolve(__dirname, '../src'),
+      assets: resolve(__dirname, '../src/assets')
     }
   },
   module: {
@@ -23,11 +23,29 @@ export default {
         use: ['babel-loader']
       },
       {
+        test: /\.(jpe?g|png|gif|svg|ico)$/i,
+        loader: 'url-loader',
+        options: {
+          name: 'assets/images/[name]-[hash:4].[ext]',
+          limit: 10
+        }
+      },
+      {
+        test: /\.css$/,
+        use: [
+          'style-loader',
+          MiniCssExtractPlugin.loader,
+          'css-loader',
+          'postcss-loader'
+        ]
+      },
+      {
         test: /\.scss$/,
         use: [
           'style-loader',
           MiniCssExtractPlugin.loader,
           'css-loader',
+          'postcss-loader',
           'sass-loader'
         ]
       }
@@ -36,7 +54,7 @@ export default {
   plugins: [
     new CleanWebpackPlugin(),
     new MiniCssExtractPlugin({
-      filename: './assets/[name].[contenthash].css'
+      filename: './assets/styles/[name].[contenthash].css'
     })
   ]
 };

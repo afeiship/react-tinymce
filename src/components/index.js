@@ -16,7 +16,7 @@ import 'tinymce/plugins/paste';
 import 'tinymce/plugins/help';
 import 'tinymce/plugins/charmap';
 import 'tinymce/plugins/contextmenu';
-import objectAssign from 'object-assign';
+import './zh_CN';
 
 export default class extends Component {
   /*===properties start===*/
@@ -39,6 +39,7 @@ export default class extends Component {
   componentDidMount() {
     tinymce.init({
       selector: 'textarea',
+      language:'zh_CN',
       skin: false,
       menubar: false,
       plugins: [

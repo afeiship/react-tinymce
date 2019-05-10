@@ -1,16 +1,16 @@
-import { resolve } from 'path';
 import CopyWebpackPlugin from 'copy-webpack-plugin';
 import baseConfig from '.';
 import merge from 'webpack-merge';
-import SemverWebpackPlugin from 'semver-webpack-plugin';
 
 export default merge(baseConfig, {
   entry: './src/main.js',
   output: {
-    filename: 'index.js'
+    filename: 'index.js',
+    library: 'ReactTinymce',
+    libraryTarget: 'umd'
   },
   externals: {
-    react: 'react',
+    react: 'React',
     classnames: 'classnames',
     noop: 'noop',
     'react-dom': 'react-dom',
@@ -18,7 +18,6 @@ export default merge(baseConfig, {
     'prop-types': 'prop-types'
   },
   plugins: [
-    new SemverWebpackPlugin({ enabled: true }),
     new CopyWebpackPlugin([
       {
         from: './src/components/style.scss',
