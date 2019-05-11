@@ -12,7 +12,7 @@ export default merge(baseConfig, {
   externals: [
     /tinymce/i,
     {
-      react: 'React',
+      react: 'react',
       classnames: 'classnames',
       noop: 'noop',
       'react-dom': 'react-dom',
