@@ -60,7 +60,7 @@ export default class extends Component {
   };
 
   render() {
-    const { className, ...props } = this.props;
+    const { className, id, ...props } = this.props;
     return (
       <textarea className={classNames('react-tinymce', className)} {...props} />
     );
