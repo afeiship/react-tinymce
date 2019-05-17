@@ -33,7 +33,7 @@ export default class extends Component {
     const { value } = this.props;
     tinymce
       .init({
-        selector: 'textarea',
+        selector: '.react-tinymce',
         language: 'zh_CN',
         skin: false,
         menubar: false,

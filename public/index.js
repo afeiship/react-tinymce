@@ -15,6 +15,9 @@ class App extends React.Component {
   render() {
     return (
       <div className="app-container">
+        <textarea name="org" id="" cols="30" rows="10">
+        I am org textarea
+        </textarea>
         <ReactTinymce value={this.state.value} onChange={this._onChange} />
       </div>
     );
