@@ -52,7 +52,7 @@ export default class extends Component {
     const _value = tinymce.activeEditor.getContent();
     if (value != null && value !== _value) {
       const timer = setTimeout(() => {
-        tinymce.activeEditor.setContent(value);
+        tinymce.activeEditor.setContent(value || '');
         clearTimeout(timer);
       }, 100);
     }
