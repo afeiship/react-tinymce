@@ -55,7 +55,9 @@ export default class extends Component {
   }
 
   componentWillUnmount() {
-    tinymce.get(this.editor.id).remove();
+    if (this.editor) {
+      tinymce.get(this.editor.id).remove();
+    }
   }
 
   _onSetup = (inInst) => {
