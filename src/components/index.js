@@ -49,7 +49,13 @@ export default class extends Component {
 
   componentWillReceiveProps(inNextProps) {
     const { value } = inNextProps;
-    tinymce.activeEditor.setContent(value);
+    const _value = tinymce.activeEditor.getContent();
+    if (value != null && value !== _value) {
+      const timer = setTimeout(() => {
+        tinymce.activeEditor.setContent(value);
+        clearTimeout(timer);
+      }, 100);
+    }
   }
 
   componentWillUnmount() {
