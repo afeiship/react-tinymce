@@ -12,13 +12,24 @@ class App extends React.Component {
     console.log('e=>', e.target.value);
   };
 
+  _dyChange = (e) => {
+    this.setState({ value: Math.random() + 'sss' });
+  };
+
   render() {
     return (
       <div className="app-container">
+        <button onClick={this._dyChange}>DynamicChangeContent</button>
         <textarea name="org" id="" cols="30" rows="10">
-        I am org textarea
+          I am org textarea
         </textarea>
-        <ReactTinymce value={this.state.value} onChange={this._onChange} />
+        <ReactTinymce
+          ref={(root) => {
+            window.ss = root;
+          }}
+          value={this.state.value}
+          onChange={this._onChange}
+        />
       </div>
     );
   }
