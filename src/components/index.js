@@ -47,6 +47,13 @@ export default class extends Component {
       });
   }
 
+  componentWillReceiveProps(inNextProps) {
+    const { value } = inNextProps;
+    if (value !== this.props.value) {
+      tinymce.activeEditor.setContent(value);
+    }
+  }
+
   componentWillUnmount() {
     tinymce.get(this.editor.id).remove();
   }
