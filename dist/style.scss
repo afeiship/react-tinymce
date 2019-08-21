@@ -1,0 +1,15 @@
+$react-tinymce-options: () !default;
+
+@import "~tinymce/skins/ui/oxide/skin.min.css";
+
+.react-tinymce {
+}
+
+// remove tiny ad:
+.tox-tinymce {
+  .tox-statusbar {
+    .tox-statusbar__branding {
+      display: none;
+    }
+  }
+}
