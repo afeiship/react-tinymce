@@ -49,7 +49,8 @@ export default class extends Component {
 
   componentWillReceiveProps(inNextProps) {
     const { value } = inNextProps;
-    if (value != null && value !== this.props.value) {
+    const _value = tinymce.activeEditor.getContent();
+    if (value != null && value !== _value) {
       tinymce.activeEditor.setContent(value);
     }
   }
@@ -69,7 +70,7 @@ export default class extends Component {
   };
 
   render() {
-    const { className, id, ...props } = this.props;
+    const { className, id, value, ...props } = this.props;
     return (
       <textarea className={classNames('react-tinymce', className)} {...props} />
     );

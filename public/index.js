@@ -8,6 +8,10 @@ class App extends React.Component {
     value: '<p><strong>STONG</strong> CONENT!</p>'
   };
 
+  componentDidMount() {
+    window.sss = this;
+  }
+
   _onChange = (e) => {
     console.log('e=>', e.target.value);
   };
@@ -24,9 +28,6 @@ class App extends React.Component {
           I am org textarea
         </textarea>
         <ReactTinymce
-          ref={(root) => {
-            window.ss = root;
-          }}
           value={this.state.value}
           onChange={this._onChange}
         />
