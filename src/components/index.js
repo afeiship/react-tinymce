@@ -49,7 +49,7 @@ export default class extends Component {
 
   componentWillReceiveProps(inNextProps) {
     const { value } = inNextProps;
-    if (value !== this.props.value) {
+    if (value != null && value !== this.props.value) {
       tinymce.activeEditor.setContent(value);
     }
   }
